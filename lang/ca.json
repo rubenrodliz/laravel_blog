@@ -254,5 +254,6 @@
     "login_description": "Accedeix per tindre accès al Bloc",
     "login_input_1": "Correu electrònic",
     "login_input_2": "Contrasenya",
-    "login_input_submit": "Accedir"
+    "login_input_submit": "Accedir",
+    "login_input_remember": "He oblidat la contrasenya."
 }

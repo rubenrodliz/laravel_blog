@@ -254,5 +254,6 @@
     "login_description": "Enter your credential to access your posts",
     "login_input_1": "Email",
     "login_input_2": "Password",
-    "login_input_submit": "Login"
+    "login_input_submit": "Login",
+    "login_input_remember": "I forgot my password"
 }
