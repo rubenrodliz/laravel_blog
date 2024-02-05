@@ -248,5 +248,11 @@
     "home_subtitle": "A useful tool to communicate with others",
     "home_button_1": "Get Started",
     "home_button_2": "Check out my portfolio",
-    "home_footer_copyright": "© 2024 Blog Rubén. All rights reserved."
+    "home_footer_copyright": "© 2024 Blog Rubén. All rights reserved.",
+
+    "login_title": "Login to my Blog",
+    "login_description": "Enter your credential to access your posts",
+    "login_input_1": "Email",
+    "login_input_2": "Password",
+    "login_input_submit": "Login"
 }

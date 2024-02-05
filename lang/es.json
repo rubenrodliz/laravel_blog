@@ -248,5 +248,11 @@
     "home_subtitle": "Una herramienta útil para comunicarse",
     "home_button_1": "Utilizala ya",
     "home_button_2": "Mira mi porfolio",
-    "home_footer_copyright": "© 2024 Blog Rubén. Todos los derechos reservados."
+    "home_footer_copyright": "© 2024 Blog Rubén. Todos los derechos reservados.",
+
+    "login_title": "Accede a mi Blog",
+    "login_description": "Entra para tener acceso al Blog",
+    "login_input_1": "Correo electrónico",
+    "login_input_2": "Contraseña",
+    "login_input_submit": "Entrar"
 }

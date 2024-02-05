@@ -244,9 +244,15 @@
     "You're logged in!": "Has iniciat sessió!",
     "Your email address is unverified.": "La teva adreça de correu electrònic no està verificada.",
 
-    "home_title": "Benvingut al meu blog",
+    "home_title": "Benvingut al meu Bloc",
     "home_subtitle": "Una eina per comunicar-se",
     "home_button_1": "Comença a utilitzar-la ara",
     "home_button_2": "Mira el meu portfolio",
-    "home_footer_copyright": "© 2024 Blog Rubén. Tots els drets reservats."
+    "home_footer_copyright": "© 2024 Blog Rubén. Tots els drets reservats.",
+
+    "login_title": "Accedeix al meu Bloc",
+    "login_description": "Accedeix per tindre accès al Bloc",
+    "login_input_1": "Correu electrònic",
+    "login_input_2": "Contrasenya",
+    "login_input_submit": "Accedir"
 }
