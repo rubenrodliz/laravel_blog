@@ -251,6 +251,9 @@
     "login_input_2": "Contraseña",
     "login_input_submit": "Entrar",
     "login_input_remember": "He olvidado la contraseña.",
+    "Don't have an account?": "¿No tienes una cuenta?",
+    "Sign up": "Regístrate",
+    "Already have an account?": "¿Ya tienes una cuenta?",
 
     "register_description": "Crea una cuenta para empezar a utilizar la aplicación"
 }

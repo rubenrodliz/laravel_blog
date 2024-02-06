@@ -1,42 +1,9 @@
 <x-guest-layout>
     <div class="flex flex-col min-h-screen bg-white">
-        <header class="flex h-14 items-center justify-between px-4 md:px-6">
-            <a class="flex items-center gap-2" href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="h-6 w-6" data-id="4">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-                <span class="sr-only">
-                    Rubén DAW
-                </span>
-            </a>
-            @if (Route::has('login'))
-                <nav class="flex gap-4 sm:gap-6">
-                    @auth
-                        <a href="{{ url('/dashboard') }}"
-                           class="text-sm font-medium hover:underline underline-offset-4">
-                            {{ __('Dashboard') }}
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}"
-                           class="text-sm font-medium hover:underline underline-offset-4">
-                            {{ __('Log in') }}
-                        </a>
+        <x-header />
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                               class="text-sm font-medium hover:underline underline-offset-4">
-                                {{ __('Register') }}
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-        </header>
         <main class="flex-1 flex flex-col justify-center min-h-full">
-            <section class="w-full py-12 md:py-24 lg:py-32">
+            <section class="w-full">
                 <div class="px-4 md:px-6">
                     <div class="flex flex-col items-center justify-center space-y-4 text-center">
                         <div class="space-y-2">
@@ -70,13 +37,22 @@
                                 </div>
 
                                 <!-- Password -->
-                                <div class="mt-4 flex flex-col items-start">
+                                <div class="mt-4 flex flex-col items-start relative">
                                     <x-input-label for="password" :value="__('Password')"/>
 
-                                    <x-text-input id="password" class="block mt-1 w-full"
-                                                  type="password"
-                                                  name="password"
-                                                  required autocomplete="new-password"/>
+                                    <div class="flex items-center relative w-full">
+                                        <x-text-input id="password" class="block mt-1 w-full pr-10"
+                                                      type="password"
+                                                      name="password"
+                                                      required autocomplete="new-password"
+                                        />
+
+                                        <button type="button" onclick="togglePasswordVisibility('password')"
+                                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                                        >
+                                            Mostrar contraseña
+                                        </button>
+                                    </div>
 
                                     <x-input-error :messages="$errors->get('password')" class="mt-2"/>
                                 </div>
@@ -85,22 +61,36 @@
                                 <div class="mt-4 flex flex-col items-start">
                                     <x-input-label for="password_confirmation" :value="__('Confirm Password')"/>
 
-                                    <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                                  type="password"
-                                                  name="password_confirmation" required autocomplete="new-password"/>
+                                    <div class="flex items-center relative w-full">
+                                        <x-text-input id="password_confirmation" class="block mt-1 w-full pr-10"
+                                                      type="password"
+                                                      name="password_confirmation"
+                                                      required autocomplete="new-password"
+                                        />
+
+                                        <button type="button" onclick="togglePasswordVisibility('password_confirmation')"
+                                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                                        >
+                                            Mostrar contraseña
+                                        </button>
+                                    </div>
 
                                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
                                 </div>
 
-                                <div class="flex items-center justify-center mt-4">
-                                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                                       href="{{ route('login') }}">
-                                        {{ __('Already registered?') }}
-                                    </a>
-
-                                    <x-primary-button class="ms-4">
+                                <div class="flex flex-col items-center justify-center mt-4">
+                                    <x-primary-button
+                                        class="w-full inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 py-2 h-12 px-6"
+                                        type="submit">
                                         {{ __('Register') }}
                                     </x-primary-button>
+
+                                    <a href="{{ route('login') }}" class="text-sm self-end mt-4 hover:underline">
+                                        <span>
+                                            {{ __("Already have an account?") }}
+                                        </span>
+                                        {{ __('Login') }}
+                                    </a>
                                 </div>
                             </form>
                         </div>
@@ -110,4 +100,15 @@
         </main>
         <x-footer/>
     </div>
+
+    <script>
+        function togglePasswordVisibility(passwordFieldId) {
+            let passwordInput = document.getElementById(passwordFieldId);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
 </x-guest-layout>
