@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 
@@ -29,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+    Route::get('thread/{thread}', [PageController::class, 'thread'])->name('page.thread');
 });
 
 require __DIR__.'/auth.php';
