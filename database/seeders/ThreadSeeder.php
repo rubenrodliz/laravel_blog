@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Post;
+use App\Models\Comment;
 use App\Models\Thread;
 use Illuminate\Database\Seeder;
 
@@ -15,7 +15,7 @@ class ThreadSeeder extends Seeder
     {
         Thread::factory(5)
             ->has(
-                Post::factory(10)
+                Comment::factory(10)
             )
             ->create();
     }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
 
             $table->text('body');
@@ -22,14 +22,14 @@ return new class extends Migration
                 ->on('threads')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-                   
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-                
+
             $table->timestamps();
         });
     }
