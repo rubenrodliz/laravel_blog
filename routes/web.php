@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/threads', [PageController::class, 'index'])->name('page.index');
-    Route::get('/threads/{thread}', [PageController::class, 'thread'])->name('page.thread');
+    Route::get('/threads/{thread:slug}', [PageController::class, 'thread'])->name('page.thread');
 });
 
 require __DIR__.'/auth.php';

@@ -11,7 +11,7 @@ class PageController extends Controller
 
         return view('pages/index', compact('threads'));
     }
-    public function thread($thread) {
+    public function thread(Thread $thread) {
         return view('pages/thread', compact('thread'));
     }
 }
