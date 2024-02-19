@@ -11,7 +11,7 @@
 <body>
     <x-app-layout>
         <x-slot name="header">
-            <h2 class="font-semibold text-xl text-white">
+            <h2 class="font-semibold text-xl dark:text-white">
                 @yield('title')
             </h2>
         </x-slot>
