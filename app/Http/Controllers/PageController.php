@@ -12,6 +12,8 @@ class PageController extends Controller
         return view('pages/index', compact('threads'));
     }
     public function thread(Thread $thread) {
-        return view('pages/thread', compact('thread'));
+        $comments = $thread->comments()->paginate(5);
+
+        return view('pages/thread', compact('thread', 'comments'));
     }
 }
