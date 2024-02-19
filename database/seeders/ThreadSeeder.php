@@ -13,7 +13,7 @@ class ThreadSeeder extends Seeder
      */
     public function run(): void
     {
-        Thread::factory(5)
+        Thread::factory(10)
             ->has(
                 Comment::factory(10)
             )

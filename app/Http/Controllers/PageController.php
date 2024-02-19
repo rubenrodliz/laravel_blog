@@ -7,7 +7,7 @@ use App\Models\Thread;
 class PageController extends Controller
 {
     public function index() {
-        $threads = Thread::orderBy('id', 'DESC')->paginate();
+        $threads = Thread::orderBy('id', 'DESC')->paginate(5);
 
         return view('pages/index', compact('threads'));
     }
