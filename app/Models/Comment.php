@@ -25,4 +25,9 @@ class Comment extends Model
     public function thread(): BelongsTo {
         return $this->belongsTo(Thread::class);
     }
+
+    public function getUpdatedAtFormattedAttribute()
+    {
+        return $this->updated_at->format('d/m/Y H:i');
+    }
 }
