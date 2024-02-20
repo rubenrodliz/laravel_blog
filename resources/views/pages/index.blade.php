@@ -1,4 +1,4 @@
-@extends('pages/template')
+@extends('pages/components/template')
 
 @section('title', 'Home')
 @section('description', 'This is the home page')
