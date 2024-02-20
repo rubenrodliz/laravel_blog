@@ -1,4 +1,4 @@
-@extends('pages/template')
+@extends('pages/components/template')
 
 @section('title', $thread->title)
 
