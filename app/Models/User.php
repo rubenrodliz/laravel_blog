@@ -55,4 +55,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'role_user');
     }
 
+    // Check if user is admin or not
+    public function isAdmin(): bool {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
 }

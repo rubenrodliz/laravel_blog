@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/threads', [PageController::class, 'index'])->name('page.index');
     Route::get('/threads/{thread:slug}', [PageController::class, 'thread'])->name('page.thread');
+
+    // TODO: Arreglar las rutas
+    Route::get('/threads/{thread:id}/{comment}', [CommentController::class, 'create'])->name('comment.create');
 });
 
 require __DIR__.'/auth.php';
