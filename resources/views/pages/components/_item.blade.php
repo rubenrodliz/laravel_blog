@@ -1,4 +1,4 @@
-<div class="rounded shadow mb-4 p-4 w-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<div class="rounded shadow mb-4 p-4 w-full hover:bg-gray-200">
     <h2 class="text-2xl mb-4">{{ $thread->title }}</h2>
 
     <div class="text-xs flex items-center justify-end">
