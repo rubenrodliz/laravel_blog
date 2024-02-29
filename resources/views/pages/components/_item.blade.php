@@ -3,7 +3,7 @@
 
     <div class="text-xs flex items-center justify-end">
         <div class="flex gap-4">
-            <span class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <span class="flex items-center gap-1 text-gray-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -12,7 +12,7 @@
 
                 {{ $thread->user->name }}
             </span>
-            <span class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <span class="flex items-center gap-1 text-gray-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -22,7 +22,7 @@
                 {{ $thread->comments->count() }} Comentarios
             </span>
 
-            <a href="{{ route('page.thread', $thread->slug) }}" class="flex items-center text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">Ver más &rarr;</a>
+            <a href="{{ route('page.thread', $thread->slug) }}" class="flex items-center text-gray-600 hover:text-gray-800">Ver más &rarr;</a>
         </div>
     </div>
 </div>
