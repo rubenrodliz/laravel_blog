@@ -22,7 +22,7 @@
                 {{ $thread->comments->count() }} Comentarios
             </span>
 
-            <a href="{{ route('page.thread', $thread->slug) }}" class="flex items-center text-gray-600 hover:text-gray-800">Ver más &rarr;</a>
+            <a href="{{ route('page.thread', $thread->id) }}" class="flex items-center text-gray-600 hover:text-gray-800">Ver más &rarr;</a>
         </div>
     </div>
 </div>

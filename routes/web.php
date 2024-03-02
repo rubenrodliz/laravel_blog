@@ -30,10 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/threads', [PageController::class, 'index'])->name('page.index');
-    Route::get('/threads/{thread:slug}', [PageController::class, 'thread'])->name('page.thread');
+    Route::get('/threads/{thread:id}', [PageController::class, 'thread'])->name('page.thread');
 
-    // TODO: Arreglar las rutas
-    Route::get('/threads/{thread:id}/{comment}', [CommentController::class, 'create'])->name('comment.create');
+    Route::post('/threads/{thread:id}', [CommentController::class, 'store'])->name('comment.store');
 });
 
 require __DIR__.'/auth.php';
