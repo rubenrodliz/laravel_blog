@@ -1,4 +1,4 @@
-@extends('pages/components/template')
+@extends('layouts.template')
 
 @section('title', $thread->title)
 
@@ -14,23 +14,26 @@
                     ({{ $thread->comments->count() }})</h2>
             </div>
 
-            <form class="mb-6">
+            <form class="mb-6" action="{{ route('comment.store', $thread->id) }}" method="POST">
+                @csrf
                 <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200">
-                    <label for="comment" class="sr-only">Tu comentario</label>
-                    <textarea id="comment" rows="6"
-                        class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none"
-                        placeholder="Escribe un comentario..." required></textarea>
+                    <x-forms.input-label for="comment" value="Tu comentario" class="text-gray-500"/>
+                    <x-forms.textarea name="comment" id="comment" value="{{ old('comment') }}" rows="4"
+                        placeholder="Escribe un comentario..."
+                        class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" required />
                 </div>
-                <button type="submit"
-                    class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-gray-200 hover:bg-gray-800">
-                    Publicar comentario
-                </button>
+
+                <x-primary-button
+                    class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-gray-800 rounded-lg focus:ring-4 focus:ring-gray-200 hover:bg-gray-700"
+                    type="submit">
+                    Publica comentario
+                </x-primary-button>           
             </form>
 
             <hr class="my-4 opacity-0">
 
             @foreach ($comments as $comment)
-                @include('pages.components.comment')
+                @include('layouts.comment')
 
                 @if ($comments[4] != $comment)
                     <hr class="my-4">
@@ -41,5 +44,3 @@
     </section>
     </div>
 @endsection
-
-    

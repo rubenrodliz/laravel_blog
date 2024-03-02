@@ -11,7 +11,9 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'body'
+        'body',
+        'thread_id',
+        'user_id'
     ];
 
     protected $with = [
