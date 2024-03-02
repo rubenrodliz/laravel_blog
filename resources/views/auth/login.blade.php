@@ -23,22 +23,22 @@
 
                                 <!-- Email Address -->
                                 <div class="mt-4 flex flex-col items-start space-y-2">
-                                    <x-input-label :value="__('Email')" class="text-lg font-medium"/>
-                                    <x-text-input id="email" name="email" type="email" class="w-full" required autofocus
+                                    <x-forms.input-label :value="__('Email')" class="text-lg font-medium"/>
+                                    <x-forms.text-input id="email" name="email" type="email" class="w-full" required autofocus
                                                   autocomplete="username"/>
-                                    <x-input-error :messages="$errors->get('email')" class="mt-2"/>
+                                    <x-forms.input-error :messages="$errors->get('email')" class="mt-2"/>
                                 </div>
 
                                 <!-- Password -->
                                 <div class="mt-4 flex flex-col items-start space-y-2">
                                     <div class=" w-full inline-flex justify-between">
-                                        <x-input-label for="password" :value="__('Password')"/>
+                                        <x-forms.input-label for="password" :value="__('Password')"/>
                                         <a href="{{ route('password.request') }}" class="text-sm hover:underline">
                                             {{ __('Forgot your password?') }}
                                         </a>
                                     </div>
                                     <div class="flex items-center relative w-full">
-                                        <x-text-input id="password" class="block mt-1 w-full pr-10"
+                                        <x-forms.text-input id="password" class="block mt-1 w-full pr-10"
                                                       type="password"
                                                       name="password"
                                                       required autocomplete="current-password"
@@ -51,7 +51,7 @@
                                         </button>
                                     </div>
 
-                                    <x-input-error :messages="$errors->get('password')" class="mt-2"/>
+                                    <x-forms.input-error :messages="$errors->get('password')" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col items-center justify-center mt-4">
