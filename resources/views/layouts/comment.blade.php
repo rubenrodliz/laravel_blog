@@ -10,7 +10,7 @@
         </div>
 
         {{-- Si el usuario logueado es propietario del comentario --}}
-        @if (Auth::user() == $comment->user or Auth::user()->isAdmin())
+        @can('hasPermissions', $comment)
             <div x-data="{ open: false }" class="relative">
                 <button @click="open = !open" @keydown.escape="open = false"
                     class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50"
@@ -40,7 +40,7 @@
                     </ul>
                 </div>
             </div>
-        @endif
+        @endcan
 
     </div>
     <p class="text-gray-500 normal-case">{{ $comment->body }}</p>
