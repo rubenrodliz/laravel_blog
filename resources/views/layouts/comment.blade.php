@@ -1,12 +1,16 @@
 <article class="py-2.5 text-base bg-white rounded-lg">
     <div class="flex justify-between items-center mb-2">
-        <div class="flex items-center">
-            <p class="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold">
+        <div class="flex items-center gap-3">
+            <p class="inline-flex items-center text-sm text-gray-900 font-semibold">
                 <img class="mr-2 w-6 h-6 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                     alt="{{ $comment->user->name }}">{{ $comment->user->name }}
             </p>
-            <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
-                    title="{{ $comment->updated_at_formatted }}">{{ $comment->updated_at_formatted }}</time></p>
+            <p class="text-sm text-gray-600">
+                <time pubdate datetime="2022-02-08" title="{{ $comment->updated_at_formatted }}">{{ $comment->updated_at_formatted }}</time>
+            </p>
+            @if ($comment->is_edited)
+                <p class="text-sm text-gray-500">Editado</p>
+            @endif
         </div>
 
         {{-- Si el usuario logueado es propietario del comentario --}}
@@ -31,7 +35,7 @@
                     class="absolute z-10 bg-white rounded divide-y divide-gray-100 shadow  right-0 mt-1" style="display: none;">
                     <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownMenuIconHorizontalButton">
                         <li>
-                            {{-- <a href="{{ route('comment.show', [$thread->id, $comment]) }}" class="block py-2 px-4 hover:bg-gray-100">Editar</a> --}}
+                            <a href="#" class="block py-2 px-4 hover:bg-gray-100" id="edit-button">Editar</a>
                         </li>
                         <li>
                             <form action="{{ route('comment.destroy', ['thread' => $thread->id, 'comment' => $comment->id]) }}" method="POST">
@@ -46,7 +50,9 @@
         @endcan
 
     </div>
+
     <p class="text-gray-500 normal-case">{{ $comment->body }}</p>
+    
     <div class="flex items-center mt-4 space-x-4">
         <button type="button" class="flex items-center text-sm text-gray-500 hover:underline font-medium">
             <svg class="mr-1.5 w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"

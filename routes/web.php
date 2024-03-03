@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/threads/{thread:id}', [PageController::class, 'thread'])->name('page.thread');
 
     Route::post('/threads/{thread:id}', [CommentController::class, 'store'])->name('comment.store');
+    Route::patch('/threads/{thread:id}/comments/{comment:id}', [CommentController::class, 'update'])->name('comment.update');
     Route::delete('/threads/{thread:id}/comments/{comment:id}', [CommentController::class, 'destroy'])->name('comment.destroy');
 });
 
