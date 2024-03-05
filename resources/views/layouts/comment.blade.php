@@ -10,7 +10,7 @@
         </div>
 
         {{-- Si el usuario logueado es propietario del comentario --}}
-        @if (Auth::user() == $comment->user or Auth::user()->isAdmin())
+        @can('hasPermissions', $comment)
             <div x-data="{ open: false }" class="relative">
                 <button @click="open = !open" @keydown.escape="open = false"
                     class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50"
@@ -28,19 +28,27 @@
                     x-transition:leave="transition ease-in duration-75"
                     x-transition:leave-start="transform opacity-100 scale-100"
                     x-transition:leave-end="transform opacity-0 scale-95"
-                    class="absolute z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow  right-0 mt-1" style="display: none;">
+                    class="absolute z-10 bg-white rounded divide-y divide-gray-100 shadow  right-0 mt-1" style="display: none;">
                     <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownMenuIconHorizontalButton">
                         <li>
                             {{-- <a href="{{ route('comment.show', [$thread->id, $comment]) }}" class="block py-2 px-4 hover:bg-gray-100">Editar</a> --}}
                         </li>
                         <li>
+<<<<<<< HEAD
                             <a href="#"
                                 class="block py-2 px-4 hover:bg-gray-100">{{ __('delete_comment') }}</a>
+=======
+                            <form action="{{ route('comment.destroy', ['thread' => $thread->id, 'comment' => $comment->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="block py-2 px-4 hover:bg-gray-100">Eliminar</button>
+                            </form>
+>>>>>>> 1a885b138ff8ebf49fc2d6a5a9dfae9e557ec703
                         </li>
                     </ul>
                 </div>
             </div>
-        @endif
+        @endcan
 
     </div>
     <p class="text-gray-500 normal-case">{{ $comment->body }}</p>
