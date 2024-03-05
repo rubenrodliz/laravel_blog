@@ -10,13 +10,7 @@
 
 <body>
     <x-app-layout>
-        <x-slot name="header">
-            <h2 class="font-semibold text-xl dark:text-white">
-                @yield('title')
-            </h2>
-        </x-slot>
-        
-        <div class="py-12 bg-white">
+        <div class="py-12 bg-gray-100">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="text-gray-900">
