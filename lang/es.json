@@ -104,9 +104,9 @@
     "Localize": "Localizar",
     "Locked": "Bloqueado",
     "Log in": "Iniciar sesión",
-    "Log Out": "Finalizar sesión",
+    "Log Out": "Cerrar sesión",
     "Login": "Iniciar sesión",
-    "Logout": "Finalizar sesión",
+    "Logout": "Cerrar sesión",
     "Loop Detected": "Bucle detectado",
     "Maintenance Mode": "Modo de mantenimiento",
     "Method Not Allowed": "Método no permitido",
@@ -255,5 +255,12 @@
     "Sign up": "Regístrate",
     "Already have an account?": "¿Ya tienes una cuenta?",
 
-    "register_description": "Crea una cuenta para empezar a utilizar la aplicación"
+    "register_description": "Crea una cuenta para empezar a utilizar la aplicación",
+
+    "threads": "Hilos",
+    "comments": "Comentarios",
+    "see_more": "Ver más",
+    "your_comment": "Tu comentario...",
+    "submit_comment": "Publicar comentario",
+    "delete_comment": "Eliminar"
 }

@@ -258,5 +258,12 @@
     "login_input_remember": "He oblidat la contrasenya.",
     "Don't have an account?": "No hi tens un compte?",
     "Sign up": "Registra't",
-    "Already have an account?": "Ja tens un compte?"
+    "Already have an account?": "Ja tens un compte?",
+
+    "threads": "Fils",
+    "comments": "Comentaris",
+    "see_more": "Veure més",
+    "your_comment": "Al teu comentari...",
+    "submit_comment": "Publicar comentari",
+    "delete_comment": "Eliminar"
 }
