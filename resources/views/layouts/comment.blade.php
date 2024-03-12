@@ -31,19 +31,11 @@
                     class="absolute z-10 bg-white rounded divide-y divide-gray-100 shadow  right-0 mt-1" style="display: none;">
                     <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownMenuIconHorizontalButton">
                         <li>
-                            {{-- <a href="{{ route('comment.show', [$thread->id, $comment]) }}" class="block py-2 px-4 hover:bg-gray-100">Editar</a> --}}
-                        </li>
-                        <li>
-<<<<<<< HEAD
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100">{{ __('delete_comment') }}</a>
-=======
                             <form action="{{ route('comment.destroy', ['thread' => $thread->id, 'comment' => $comment->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="block py-2 px-4 hover:bg-gray-100">Eliminar</button>
                             </form>
->>>>>>> 1a885b138ff8ebf49fc2d6a5a9dfae9e557ec703
                         </li>
                     </ul>
                 </div>
