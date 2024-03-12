@@ -13,9 +13,9 @@
     @if (Route::has('login'))
         <nav class="flex gap-4 sm:gap-6">
             @auth
-                <a href="{{ url('/dashboard') }}"
+                <a href="{{ url('/threads') }}"
                    class="text-sm font-medium hover:underline underline-offset-4">
-                    {{ __('Dashboard') }}
+                    {{ __('threads') }}
                 </a>
             @else
                 <a href="{{ route('login') }}"
