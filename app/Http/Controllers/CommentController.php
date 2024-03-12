@@ -23,11 +23,11 @@ class CommentController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function destroy(Thread $thread, Comment $comment): RedirectResponse|AuthorizationException
+    public function destroy(Thread $thread, Comment $comment)
     {   
         if ($comment->thread_id === $thread->id) {
             $comment->delete();
-            return redirect()->back();
+            return back();
         }
 
         abort(403);
