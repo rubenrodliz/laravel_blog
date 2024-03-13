@@ -1,5 +1,15 @@
 <article class="rounded shadow mb-4 p-4 w-full hover:bg-gray-200">
-    <h2 class="text-2xl mb-4">{{ $thread->title }}</h2>
+    <div class="text-xs flex items-center justify-between mb-4">
+        <h2 class="text-2xl">{{ $thread->title }}</h2>
+
+        @can('hasPermissions', $thread)
+        <form action="{{ route('thread.destroy', $thread) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="flex items-center text-red-600 hover:text-red-800 font-bold">Eliminar</button>
+        </form>
+        @endcan
+    </div>
 
     <div class="text-xs flex items-center justify-end">
         <div class="flex gap-4">

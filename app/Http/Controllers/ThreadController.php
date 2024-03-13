@@ -19,5 +19,12 @@ class ThreadController extends Controller
         ];
 
         Thread::create($thread);
+
+        return back();
+    }
+
+    public function destroy(Thread $thread) {
+        $thread->delete();
+        return back();
     }
 }
