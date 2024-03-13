@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/threads', [PageController::class, 'index'])->name('page.index');
     Route::get('/threads/{thread:id}', [PageController::class, 'thread'])->name('page.thread');
+    Route::post('/threads/create', [ThreadController::class, 'store'])->name('thread.store');
 
     Route::post('/threads/{thread:id}', [CommentController::class, 'store'])->name('comment.store');
     Route::delete('/threads/{thread:id}/comments/{comment:id}', [CommentController::class, 'destroy'])->name('comment.destroy');

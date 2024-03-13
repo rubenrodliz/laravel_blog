@@ -11,6 +11,10 @@ class Thread extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title', 'slug', 'body', 'user_id'
+    ];
+
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
