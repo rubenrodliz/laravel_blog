@@ -1,57 +1,71 @@
+
 # Laravel Blog
 
-Este proyecto consiste en una plataforma de mensajería donde los distintios usuarios pueden postear y entre ellos realizar comentarios. 
-La plataforma tienen distintos roles que ofrecen distintos privilegios.
-Los posts son administrables por los usuarios: crear, eliminar y editar.
+El proyecto consiste en una plataforma de mensajería bajo persistencia donde los usuarios pueden crear hilos y publicar comentarios.
 
-## Requisitos Previos
 
-Antes de comenzar, deberías asegurarte de tener instalado lo siguiente:
--   PHP => 8.2.
--   Composer
--   MySQL
--   NPM
--   Node
 
-## Instalación
+## Tecnologías
 
-Para poder ejecutar el proyecto, sigue los siguientes pasos:
+**Cliente:** HTML, TailwindCSS, Alpine.js
 
-1. Clonar el repositorio
+**Servidor:** PHP 8.3, Laravel 10, SQL, Node 21.7.1
 
-Primero, debemos obtener el repositorio en local. Para ello, podemos ejecutar el siguiente comando en la terminal:
-`git clone https://github.com/rubenrodliz/laravel_blog.git`
 
-2. Instalar las dependencias de Composer
+## Ejecutarlo localmente
 
-Nos ubicaremos dentro del proyecto e instalaremos las dependencias. Para ello, podemos ejecutar el siguiente comando en la terminal:
-`composer install`
+Clonar el proyecto
 
-3. Configurar el entorno
+```bash
+  git clone https://github.com/rubenrodliz/laravel_blog.git
+```
 
-Copiaremos el fichero `.env.example` y lo renombraremos como `.env` y, actualizaremos los datos según nuestro sistema. **Importante tener introducidos los datos de la base de datos.**
+Acceder al proyecto
 
-4. Generar la clave de la aplicación
+```bash
+  cd laravel_blog
+```
 
-Debemos generar una clave única para que el proyecto funcione. Para ello, podemos ejecutar el sigueinte comando en la terminal:
+Modificar el .env
+```bash
+  mv .env.example .env
+```
 
-`php artisan key:generate`
+Instalar dependencias
 
-5. Migraciones y Seeders de la Base de Datos
+```bash
+  composer install && npm install
+```
 
-Ahora, falta obtener las tablas y rellenarla de datos para poder trabajar con la aplicación:
+Introducir clave
 
-`php artisan migrate`<br>
-`php artisan db:seed`
+```bash
+  php artisan key:generate
+```
 
-## Ejecución del proyecto
+Ejecutar las migraciones
 
-Para ejecutar el proyecto en local, utilizaremos el servidor intergrado de Laravel. Para ello, podemos ejecutar el sigueinte comando en la terminal:
+```bash
+  php artisan migrate -seed  
+```
 
-`php artisan serve`
+Ejecutar el servidor
 
-*Esto iniciará un servidor web en `http://localhost:8000` por defecto, donde podrás acceder a la aplicación.*
+```bash
+  php artisan serve
+  npm run dev
+```
 
-Por último, debido a que la aplicación utiliza la herramienta **Tailwind**, debemos ejecutar el compilador **npm** para que los estilos se vean reflejados. Para ello, podemos ejecutar el sigueinte comando en la terminal:
 
-`npm run dev`
+## Características
+
+- Autenticación
+- Subir comentarios
+- Editar información de usuario
+- CRUD de comentarios e hilos
+
+
+## Autor
+
+- [@rubenrodliz](https://www.github.com/rubenrodliz)
+
