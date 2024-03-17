@@ -36,5 +36,6 @@ class CommentController extends Controller
     public function store(Request $request, Thread $thread)
     {
         Comment::create(['body' => $request->get('comment'), 'thread_id' => $thread->id, 'user_id' => Auth::user()->id]);
+        return back();
     }
 }
